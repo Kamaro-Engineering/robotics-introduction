@@ -4,7 +4,7 @@ An introduction to robotics. The target is to get into robotics and ros with an 
 This is a tutorial on robotics.
 The provided software can be used with for example an RC-Car with a PI attached like alice- and bob-hardware or with a full sized robot using ros.
 
-If you do not have a robot yet look at the alice- or bob-hardware repositories to build your own robot.
+If you do not have a robot yet look at the alice- or bob-hardware repositories to build your own robot. https://github.com/penguinmenac3/alice-hardware https://github.com/penguinmenac3/bob-hardware
 If you want to adopt your ros robot to be compliant with this tutorial, write us an email.
 
 # Setup
