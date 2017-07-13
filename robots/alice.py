@@ -45,6 +45,8 @@ class Robot(robot.Robot):
             tags = self.fsock.readline().replace("\n", "").split(" ")
             if tags[0] == "reward":
                 self._reward = int(tags[1])
+            if tags[0] == "gps":
+                self._update_global_position(float(tags[1]), float(tags[2]), float(tags[4]))
             if tags[0] == "sense":  # sense 0.1 0.2 0.3 0.4
                 dat = [float(x) for x in tags[1:]]
                 self._update_sensor_reading("sense", dat)
