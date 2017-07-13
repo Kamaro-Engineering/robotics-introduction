@@ -6,7 +6,7 @@ from nav_msgs.msg import Odometry
 from kamaro_msgs.msg import KamaroDriveCommand
 
 
-BETELGEUSE_MAX_SPEED = 1.0 # Can be theoretically 2 or 3
+BETELGEUSE_MAX_SPEED = 1.0  # Can be theoretically 2 or 3
 BETELGEUSE_MAX_TURN = 2.0
 BETELGEUSE_MAX_DRIFT = 2.0
 
@@ -22,8 +22,8 @@ class Robot(robot.Robot):
 
         self.drive_pub = rospy.Publisher("/ai/ai/drive_command", KamaroDriveCommand, queue_size=1)
 
-        self.lidar_front_sub = rospy.Subscriber("/robot/lidar_front", LaserScan, self._on_lidar_front)
-        self.lidar_back_sub = rospy.Subscriber("/robot/lidar_back", LaserScan, self._on_lidar_back)
+        self.lidar_front_sub = rospy.Subscriber("/lidar_filtered/lidar_front_scan_filtered", LaserScan, self._on_lidar_front)
+        self.lidar_back_sub = rospy.Subscriber("/lidar_filtered/lidar_back_scan_filtered", LaserScan, self._on_lidar_back)
         self.odom_sub = rospy.Subscriber("/odom/fused", Odometry, self._on_odometry)
 
     def _on_odometry(self, data):
@@ -31,7 +31,7 @@ class Robot(robot.Robot):
         self._update_local_position(data.pose.pose.position.x, data.pose.pose.position.y, tf.transformations.euler_from_quaternion(q)[2])
 
     def _on_lidar_front(self, data):
-        self._update_sensor_reading("distance/front", data.ranges)
+        self._update_sensor_reading("distance/front", [x if 0 < x < 16 else 16.0 for x in data.ranges])
 
     def _on_lidar_back(self, data):
         self._update_sensor_reading("distance/back", data.ranges)
