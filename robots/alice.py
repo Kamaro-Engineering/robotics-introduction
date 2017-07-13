@@ -5,6 +5,9 @@ import threading
 import robot
 
 
+ALICE_MAX_SPEED = 0.1142 * 2
+
+
 class Robot(robot.Robot):
     def __init__(self, sensors=None, host="localhost", port=2323):
         super(Robot, self).__init__()
@@ -54,8 +57,8 @@ class Robot(robot.Robot):
         self.sock.close()
 
     def _act(self):
-        v_l = self.speed - self.turn
-        v_r = self.speed + self.turn
+        v_l = self.speed - self.turn * self.speed * 2
+        v_r = self.speed + self.turn * self.speed * 2
 
         act = [v_l, v_r]
 
