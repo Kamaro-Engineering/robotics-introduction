@@ -46,10 +46,11 @@ class Robot(robot.Robot):
             if tags[0] == "reward":
                 self._reward = int(tags[1])
             if tags[0] == "sense":  # sense 0.1 0.2 0.3 0.4
-                self._update_sensor_reading("sense", tags[1:])
-                self._update_sensor_reading("distance/front", tags[1:4])
+                dat = [float(x) for x in tags[1:]]
+                self._update_sensor_reading("sense", dat)
+                self._update_sensor_reading("distance/front", dat[:len(self.sensors)])
                 for i in range(len(self.sensors)):
-                    self._update_ultrasonic_reading(float(tags[i + 1]), self.sensors[i])
+                    self._update_ultrasonic_reading(dat[i], self.sensors[i])
 
     def shutdown(self):
         super(Robot, self).shutdown()
