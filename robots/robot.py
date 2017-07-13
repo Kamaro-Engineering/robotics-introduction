@@ -37,6 +37,7 @@ class Robot(object):
         self.on_global_position = None
         self.on_local_position = None
         self.on_button_state_changed = None
+        self.on_sensor_reading = None
 
     def wait(self):
         """
@@ -62,6 +63,7 @@ class Robot(object):
         self.on_global_position = None
         self.on_local_position = None
         self.on_button_state_changed = None
+        self.on_sensor_reading = None
 
     def set_led(self, led_id, status):
         """
@@ -162,6 +164,25 @@ class Robot(object):
                 traceback.print_exc(file=sys.stdout)
                 print("Method got automatically unregistered.")
                 self.on_ultrasonic_reading = None
+
+    def _update_sensor_reading(self, sensor, data):
+        """
+        PRIVATE FUNCTION Do not use!
+
+        The hardware implementation can call this function to update an unspecified sensor reading.
+
+        This method calls the on_sensor_reading if availible.
+
+        sensor is the name of the sensor as a string. (e.g. laser_scanner_1)
+        data is the data payload. (e.g. an array containing distances in cm)
+        """
+        if self.on_sensor_reading is not None:
+            try:
+                self.on_sensor_reading(sensor, data)
+            except:
+                traceback.print_exc(file=sys.stdout)
+                print("Method got automatically unregistered.")
+                self.on_sensor_reading = None
 
     def _update_global_position(self, lat, lon, dir_to_north):
         """

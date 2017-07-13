@@ -43,7 +43,9 @@ class Robot(robot.Robot):
             if tags[0] == "reward":
                 self._reward = int(tags[1])
             if tags[0] == "sense":  # sense 0.1 0.2 0.3 0.4
-                for i in range(len(tags) - 1):
+                self._update_sensor_reading("sense", tags[1:])
+                self._update_sensor_reading("distance/front", tags[1:4])
+                for i in range(len(self.sensors)):
                     self._update_ultrasonic_reading(float(tags[i + 1]), self.sensors[i])
 
     def shutdown(self):
@@ -57,4 +59,5 @@ class Robot(robot.Robot):
 
         act = [v_l, v_r]
 
-        self.sock.send("drive " + str(int(100.0 * act[0])) + " " + str(int(100.0 * act[1])) + "\n")
+        action_str = " ".join([str(int(100.0 * act[i])) for i in range(len(act))])
+        self.sock.send("drive " + action_str + "\n")
