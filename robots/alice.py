@@ -43,6 +43,10 @@ class Robot(robot.Robot):
     def receive_data(self):
         while True:
             tags = self.fsock.readline().replace("\n", "").split(" ")
+            if tags[0] == '':
+                print("Warning: Server seems to be down")
+                self._running = False
+                return
             if tags[0] == "reward":
                 self._reward = int(tags[1])
             if tags[0] == "gps":
@@ -55,9 +59,12 @@ class Robot(robot.Robot):
                     self._update_ultrasonic_reading(dat[i], self.sensors[i])
 
     def shutdown(self):
-        super(Robot, self).shutdown()
-        self.fsock.close()
-        self.sock.close()
+        try:
+            super(Robot, self).shutdown()
+            self.fsock.close()
+            self.sock.close()
+        except:
+            print("Warning: Error on shutdown, is the connection broken?")
 
     def _act(self):
         v_l = self.speed - self.turn * self.speed * 2

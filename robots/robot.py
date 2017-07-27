@@ -33,6 +33,8 @@ class Robot(object):
 
         self._buttons = [False, False, False, False]
 
+        self._running = True
+
         self.on_ultrasonic_reading = None
         self.on_global_position = None
         self.on_local_position = None
@@ -45,8 +47,8 @@ class Robot(object):
         """
         print("Press CTRL + C to exit wait.")
         try:
-            while True:
-                time.sleep(1000)
+            while self._running:
+                time.sleep(1)
         except KeyboardInterrupt:
             print("User pressed CTRL + C")
 
