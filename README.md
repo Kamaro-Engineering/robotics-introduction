@@ -14,9 +14,12 @@ If you want to adopt your ros robot to be compliant with this tutorial, write us
 # Setup
 
 1. Get yourself a compatible robot, if your instructor has not done so for you already.
+
     a) Build your own alice or bob robot.
-    b) Adopt a ros robot
-    c) Use the alice simulator.
+    
+    b) Adopt a ros robot.
+    
+    c) Use the alice simulator. (https://github.com/penguinmenac3/alice-simulator)
     
 2. Install git and python on your system (see **install dependencies** instrucitons below)
 
