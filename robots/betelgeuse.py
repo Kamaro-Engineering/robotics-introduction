@@ -28,7 +28,8 @@ class Robot(robot.Robot):
 
     def _on_odometry(self, data):
         q = (data.pose.pose.orientation.x, data.pose.pose.orientation.y, data.pose.pose.orientation.z, data.pose.pose.orientation.w)
-        self._update_local_position(data.pose.pose.position.x, data.pose.pose.position.y, tf.transformations.euler_from_quaternion(q)[2])
+        accuracy = -1
+        self._update_local_position(data.pose.pose.position.x, data.pose.pose.position.y, tf.transformations.euler_from_quaternion(q)[2], accuracy)
 
     def _on_lidar_front(self, data):
         self._update_sensor_reading("distance/front", [x if 0 < x < 16 else 16.0 for x in data.ranges])

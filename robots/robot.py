@@ -186,7 +186,7 @@ class Robot(object):
                 print("Method got automatically unregistered.")
                 self.on_sensor_reading = None
 
-    def _update_global_position(self, lat, lon, dir_to_north):
+    def _update_global_position(self, lat, lon, dir_to_north, accuracy):
         """
         PRIVATE FUNCTION Do not use!
 
@@ -199,13 +199,13 @@ class Robot(object):
         self._dir_to_north = dir_to_north
         if self.on_global_position is not None:
             try:
-                self.on_global_position(lat, lon, dir_to_north)
+                self.on_global_position(lat, lon, dir_to_north, accuracy)
             except:
                 traceback.print_exc(file=sys.stdout)
                 print("Method got automatically unregistered.")
                 self.on_global_position = None
 
-    def _update_local_position(self, x, y, heading):
+    def _update_local_position(self, x, y, heading, accuracy):
         """
         PRIVATE FUNCTION Do not use!
 
@@ -218,7 +218,7 @@ class Robot(object):
         self._heading = heading
         if self.on_local_position is not None:
             try:
-                self.on_local_position(x, y, heading)
+                self.on_local_position(x, y, heading, accuracy)
             except:
                 traceback.print_exc(file=sys.stdout)
                 print("Method got automatically unregistered.")
