@@ -2,7 +2,7 @@ import math
 import socket
 import threading
 
-import robot
+import robots.robot as robot
 
 
 ALICE_MAX_SPEED = 0.1142 * 2
@@ -17,7 +17,7 @@ class Robot(robot.Robot):
         except:
             error_msg = "Robot not found at {}. Is the robot/simulator running?".format(host)
             raise RuntimeError(error_msg)
-        self.sock.send("ai\n")
+        self.sock.send("ai\n".encode('utf-8'))
         self.fsock = self.sock.makefile()
         self.sensors = sensors
         self.speed = 0
@@ -73,4 +73,4 @@ class Robot(robot.Robot):
         act = [v_l, v_r]
 
         action_str = " ".join([str(int(100.0 * act[i])) for i in range(len(act))])
-        self.sock.send("drive " + action_str + "\n")
+        self.sock.send(("drive " + action_str + "\n").encode('utf-8'))
