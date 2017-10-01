@@ -1,9 +1,9 @@
-#Assignment 6: Collision Avoidance
+# Assignment 6: Collision Avoidance
 
 Until now, you only have steered the robot blindly. But a robot who does not interact or react with its
 environment is barely a robot.
 
-##Sensing our surroundings
+## Sensing our surroundings
 
 In this assignment you will learn how to use your robot's sensors to navigate an environment full of obstacles
 without prior knowledge about it. The goal is to drive through a room without colliding with any of its obstacles.
@@ -33,7 +33,7 @@ Try now to keep the robot moving through the room without collisions utilizing y
 and the stuff you learned in assignment 3.
 Just standing still or driving in a small enough circle do not count. ;)
 
-##Bonus
+## Bonus
 
 Make your code work for a robot with any number of frontfacing sensors. How do you distinguish between a left
 facing or right facing sensor, assuming a symmetrical setup?
