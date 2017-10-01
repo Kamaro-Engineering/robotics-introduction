@@ -20,3 +20,12 @@ robot.wait()
 robot.shutdown()
 
 ```
+
+## Bonus
+
+1. Stop once you reached the target location.
+2. Blink with an led for 3 seconds.
+3. Drive back to the starting location.
+4. Blink with an led for 3 seconds.
+
+Try to reach the targets as precise as possible.

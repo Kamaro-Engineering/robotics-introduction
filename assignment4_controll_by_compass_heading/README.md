@@ -5,7 +5,7 @@ As you might have seen in the last exercise the robot does not always drive exac
 You can control the robot using the compass as follows:
 
 ```python
-from robots.alice import Robot
+from robots.alice import Robot, ALICE_MAX_SPEED
 from math import pi
 
 def on_global_position(lat, lon, angle_to_north, accuracy):
@@ -13,7 +13,7 @@ def on_global_position(lat, lon, angle_to_north, accuracy):
 
 robot = Robot()
 robot.on_global_position = on_global_position
-robot.set_speed(0.1)  # move with 1 m/s
+robot.set_speed(ALICE_MAX_SPEED)  # move full speed
 
 robot.wait()
 robot.shutdown()
@@ -21,4 +21,10 @@ robot.shutdown()
 ```
 
 `angle_to_north` is the counter-clockwise positive angle from the robot to the north pole.
-You could use a P or PI Controller to calculate the turn strength. Keep in mind the angle has a discontinuity at -pi/pi.
+You could use a bang-bang-, P- or PI-controller to calculate the turn strength.
+Keep in mind the angle has a discontinuity at -pi/pi.
+
+
+## Bonus
+
+Write an improved version of the rectangle driving using the compass. The results should be far better.

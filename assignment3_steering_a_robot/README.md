@@ -13,10 +13,10 @@ This task description will only tell you how to set the speed and turn of a robo
 But don't think to complicated. You MUST NOT use any robot api that has not yet been introduced.
 
 ```python
-from robots.alice import Robot
+from robots.alice import Robot, ALICE_MAX_SPEED
 
 robot = Robot()
-robot.set_speed(0.1)  # move with 1 m/s
+robot.set_speed(ALICE_MAX_SPEED)  # move with full speed
 robot.set_turn(0.5)  # turn left with 50%
 
 robot.wait()
