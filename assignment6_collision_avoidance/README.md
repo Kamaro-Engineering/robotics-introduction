@@ -3,7 +3,7 @@
 Until now, you only have steered the robot blindly. But a robot who does not interact or react with its
 environment is barely a robot.
 
-## Sensing our surroundings
+## Sensing your surroundings
 
 In this assignment you will learn how to use your robot's sensors to navigate an environment full of obstacles
 without prior knowledge about it. The goal is to drive through a room without colliding with any of its obstacles.
@@ -11,12 +11,15 @@ without prior knowledge about it. The goal is to drive through a room without co
 To use the sensor data, you have to define the callback `on_sensor_reading` of your robot like the following:
 
 ```python
+from robots.alice import Robot
+
 def process_sensor_data(sensor, data):
   if sensor == "distance/front":
     print ("New sensor data:")
     for i in range(0, len(data)):
       print("  Sensor {} measured a distance of {}".format(i, data[i]))
 
+robot = Robot()
 robot.on_sensor_reading = process_sensor_data
 
 robot.wait()
