@@ -1,4 +1,4 @@
-# Assignment 4: Steering a robot straight
+# Assignment 5: Steering a robot straight
 
 As you might have seen in the last exercise the robot does not always drive exactly straight when you tell him to. You should now use the compass to correct these errors.
 
@@ -9,7 +9,7 @@ from robots.alice import Robot, ALICE_MAX_SPEED
 from math import pi
 
 def on_global_position(lat, lon, angle_to_north, accuracy):
-    robot.set_turn(f(angle_to_north))
+    robot.set_turn(angle_to_north)
 
 robot = Robot()
 robot.on_global_position = on_global_position
