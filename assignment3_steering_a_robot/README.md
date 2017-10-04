@@ -27,3 +27,6 @@ robot.shutdown()
 ## Bonus
 
 Make the shape of the rectangle configurable by introducing two variables WIDTH = 0.2 and HEIGHT = 0.3.
+
+## Hint
+Your turning won't be perfect just yet, try and get it as close as possible.
