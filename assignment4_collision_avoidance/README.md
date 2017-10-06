@@ -1,4 +1,4 @@
-# Assignment 6: Collision Avoidance
+# Assignment 4: Collision Avoidance
 
 Until now, you only have steered the robot blindly. But a robot who does not interact or react with its
 environment is barely a robot.

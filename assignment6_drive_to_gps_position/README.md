@@ -1,4 +1,4 @@
-# Assignment 5: Steering a robot to a destination
+# Assignment 6: Steering a robot to a destination
 
 Most of the time you do not want to drive in a certain direction but to a certain position. Use the gps coordinates to calculate the direction the robot has to go.
 
