@@ -55,6 +55,7 @@ class Robot(robot.Robot):
                 return
             if tags[0] == "reward":
                 self._reward = int(tags[1])
+                self._update_sensor_reading("reward", self._reward)
             if tags[0] == "gps":
                 # lat, lon, alt, angle_to_north, ?, accuracy, ?
                 self._update_global_position(float(tags[1]), float(tags[2]), float(tags[4]), float(tags[6]))
