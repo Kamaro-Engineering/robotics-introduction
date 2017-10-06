@@ -8,8 +8,14 @@ You can control the robot using the compass as follows:
 from robots.alice import Robot, ALICE_MAX_SPEED
 from math import pi
 
+#Desired Direction in Radians
+desired_direction = #Input required direction in radians here
+
+def direction(angle_to_north):
+#Define this function
+
 def on_global_position(lat, lon, angle_to_north, accuracy):
-    robot.set_turn(angle_to_north)
+    robot.set_turn(direction(angle_to_north)) #Create a function to allow robot to move towards desired direction
 
 robot = Robot()
 robot.on_global_position = on_global_position
