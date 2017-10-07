@@ -1,6 +1,9 @@
 import math
 import socket
 import threading
+import base64
+import numpy as np
+import cv2
 
 import robots.robot as robot
 
@@ -67,6 +70,11 @@ class Robot(robot.Robot):
                 self._update_sensor_reading("distance/front", dat[:len(self.sensors)])
                 for i in range(len(self.sensors)):
                     self._update_ultrasonic_reading(dat[i], self.sensors[i])
+            if tags[0] == "img": # img <bsd_encoded jpeg>
+                jpg_buffer = base64.b64decode(tags[1])
+                jpg_as_np = np.frombuffer(jpg_buffer, dtype=np.uint8)
+                image_buffer = cv2.imdecode(jpg_as_np, flags=1)
+                self._update_sensor_reading("img", image_buffer)
 
     def shutdown(self):
         try:
