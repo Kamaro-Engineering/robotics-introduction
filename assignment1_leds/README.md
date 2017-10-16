@@ -33,7 +33,7 @@ We can now change the leds of the robot by simply calling the set_led method on 
 robot.set_led(0, True)
 ```
 
-Woohoo, the LED turned on! Now you should try to turn of the led after it was on for 2 seconds.
+Woohoo, the LED turned on! Now you should try to turn off the led after it was on for 2 seconds.
 
 Hint: there is a 'time' module in python which might has a handy method.
 
