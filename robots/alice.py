@@ -49,6 +49,9 @@ class Robot(robot.Robot):
         self.turn = turn
         self._act()
 
+    def set_led(self, led_id, status):
+        self.sock.send(("led {} {}\n".format(led_id, status)).encode('utf-8'))
+
     def receive_data(self):
         while True:
             tags = self.fsock.readline().replace("\n", "").split(" ")
@@ -75,6 +78,10 @@ class Robot(robot.Robot):
                 jpg_as_np = np.frombuffer(jpg_buffer, dtype=np.uint8)
                 image_buffer = cv2.imdecode(jpg_as_np, flags=1)
                 self._update_sensor_reading("img", image_buffer)
+            if tags[0] == "btn":
+                btn_id = int(tags[1])
+                btn_state = bool(tags[2])
+                self._update_button_state(btn_id, btn_state)
 
     def shutdown(self):
         try:
