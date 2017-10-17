@@ -12,6 +12,9 @@ As you have made it to assignment 1, I assume you have successfully completed th
 
 ## At the blink of an eye
 
+Before we can start with the implementation make sure you have the simulator installed and launched.
+All instructions for the simulator (including how to launch it) can be found here: https://github.com/penguinmenac3/alice-simulator
+
 Your first task will be to program an LED so that it blinks with a frequency of 1Hz.
 The tasks main goal is to make you a bit familiar with the language python and the basics of the framework.
 
@@ -39,6 +42,19 @@ Hint: there is a 'time' module in python which might has a handy method.
 
 If you managed turn off the LED after a certain time, you now can finish to implement the task by repeatedly turning the LED on and of at the correct time.
 Remember the LED should blink at a rate of 1Hz.
+
+## Using a real robot
+
+If you want to use a real robot and not the simulator you have to provide a host to the robot constructor.
+Here are the examples for alice and eve:
+
+```python
+# Alice
+robot = Robot(host="alice-bot.local")
+
+# Eve
+robot = Robot(host="eve-bot.local")
+```
 
 ## Bonus
 
