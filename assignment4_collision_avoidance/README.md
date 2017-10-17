@@ -11,7 +11,9 @@ without prior knowledge about it. The goal is to drive through a room without co
 To use the sensor data, you have to define the callback `on_sensor_reading` of your robot like the following:
 
 ```python
-from robots.alice import Robot
+from robots.alice import Robot, ALICE_MAX_SPEED
+
+robot = Robot()
 
 def process_sensor_data(sensor, data):
   if sensor == "distance/front":
@@ -19,7 +21,6 @@ def process_sensor_data(sensor, data):
     for i in range(0, len(data)):
       print("  Sensor {} measured a distance of {}".format(i, data[i]))
 
-robot = Robot()
 robot.on_sensor_reading = process_sensor_data
 
 robot.wait()

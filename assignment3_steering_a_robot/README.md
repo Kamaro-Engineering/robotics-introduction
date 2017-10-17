@@ -30,3 +30,16 @@ Make the shape of the rectangle configurable by introducing two variables WIDTH 
 
 ## Hint
 Your turning won't be perfect just yet, try and get it as close as possible.
+
+## Reminder: Using a real robot
+
+If you want to use a real robot and not the simulator you have to provide a host to the robot constructor.
+Here are the examples for alice and eve:
+
+```python
+# Alice
+robot = Robot(host="alice-bot.local")
+
+# Eve
+robot = Robot(host="eve-bot.local")
+```

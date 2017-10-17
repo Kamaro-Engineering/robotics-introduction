@@ -9,17 +9,18 @@ from robots.alice import Robot, ALICE_MAX_SPEED
 from math import pi
 
 #Desired Direction in Radians
-desired_direction = #Input required direction in radians here
+desired_direction = 0  # Input required direction in radians here
 
 def direction(angle_to_north):
-#Define this function
+    #Define this function
+    return 0.0
 
 def on_global_position(lat, lon, angle_to_north, accuracy):
-    robot.set_turn(direction(angle_to_north)) #Create a function to allow robot to move towards desired direction
+    robot.set_turn(direction(angle_to_north))  # Create a function to allow robot to move towards desired direction
 
 robot = Robot()
 robot.on_global_position = on_global_position
-robot.set_speed(ALICE_MAX_SPEED)  # move full speed
+robot.set_speed(ALICE_MAX_SPEED)  # Move full speed
 
 robot.wait()
 robot.shutdown()
