@@ -18,6 +18,8 @@ All instructions for the simulator (including how to launch it) can be found her
 Your first task will be to program an LED so that it blinks with a frequency of 1Hz.
 The tasks main goal is to make you a bit familiar with the language python and the basics of the framework.
 
+Put your code in the `__init__.py` file in the assignment folder and start it by executing `python -m assignment1_leds` in the root folder of the repository.
+
 To be able to work with a robot we have to import a robot into python.
 
 ```python
@@ -38,7 +40,7 @@ robot.set_led(0, True)
 
 Woohoo, the LED turned on! Now you should try to turn off the led after it was on for 2 seconds.
 
-Hint: there is a 'time' module in python which might has a handy method.
+Hint: there is a 'time' module in python which might have a handy method.
 
 If you managed turn off the LED after a certain time, you now can finish to implement the task by repeatedly turning the LED on and of at the correct time.
 Remember the LED should blink at a rate of 1Hz.
