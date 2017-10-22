@@ -12,7 +12,7 @@ This assignment will be about transforming the previous task so that it will wor
 The help that this task description provides you will be as minimal as possible only telling you
 what the differences between betelgeuse and the small robot are.
 
-Dependiing on the strategy chosen in task 7 you may need to rethink parts of it.
+Depending on the strategy chosen in task 7 you may need to rethink parts of it.
 
 ### Different Motion Model
 
