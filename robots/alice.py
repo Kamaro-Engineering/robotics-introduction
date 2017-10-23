@@ -8,13 +8,14 @@ import cv2
 import robots.robot as robot
 
 
-ALICE_MAX_SPEED = 0.1142 * 2
+MAX_SPEED = 0.1142 * 2
+MAX_TURN = 1.0
 
-ALICE_LEFT = 1.0
-ALICE_HALF_LEFT = 0.5
-ALICE_CENTER = 0.0
-ALICE_HALF_RIGHT = -0.5
-ALICE_RIGHT = -1.0
+TURN_LEFT = 1.0
+TURN_HALF_LEFT = 0.5
+TURN_CENTER = 0.0
+TURN_HALF_RIGHT = -0.5
+TURN_RIGHT = -1.0
 
 
 class Robot(robot.Robot):

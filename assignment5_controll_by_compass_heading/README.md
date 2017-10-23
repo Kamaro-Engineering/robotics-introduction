@@ -5,7 +5,7 @@ As you might have seen in the last exercise the robot does not always drive exac
 You can control the robot using the compass as follows:
 
 ```python
-from robots.alice import Robot, ALICE_MAX_SPEED
+from robots.alice import Robot, MAX_SPEED
 from math import pi
 
 #Desired Direction in Radians
@@ -20,7 +20,7 @@ def on_global_position(lat, lon, angle_to_north, accuracy):
 
 robot = Robot()
 robot.on_global_position = on_global_position
-robot.set_speed(ALICE_MAX_SPEED)  # Move full speed
+robot.set_speed(MAX_SPEED)  # Move full speed
 
 robot.wait()
 robot.shutdown()

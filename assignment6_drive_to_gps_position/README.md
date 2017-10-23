@@ -5,7 +5,7 @@ Most of the time you do not want to drive in a certain direction but to a certai
 You can get the coordinates as follows:
 
 ```python
-from robots.alice import Robot, ALICE_MAX_SPEED
+from robots.alice import Robot, MAX_SPEED
 from math import pi
 
 def g(lat, lon):
@@ -22,7 +22,7 @@ def on_global_position(lat, lon, angle_to_north):
 
 robot = Robot()
 robot.on_global_position = on_global_position
-robot.set_speed(ALICE_MAX_SPEED)  # move with max speed
+robot.set_speed(MAX_SPEED)  # move with max speed
 
 robot.wait()
 robot.shutdown()

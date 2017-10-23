@@ -6,10 +6,15 @@ from nav_msgs.msg import Odometry
 from kamaro_msgs.msg import KamaroDriveCommand
 
 
-BETELGEUSE_MAX_SPEED = 1.0  # Can be theoretically 2 or 3
-BETELGEUSE_MAX_TURN = 2.0
-BETELGEUSE_MAX_DRIFT = 2.0
+MAX_SPEED = 1.0  # Can be theoretically 2 or 3
+MAX_TURN = 2.0
+MAX_DRIFT = 2.0
 
+TURN_LEFT = 2.0
+TURN_HALF_LEFT = 1.0
+TURN_CENTER = 0.0
+TURN_HALF_RIGHT = -1.0
+TURN_RIGHT = -2.0
 
 class Robot(robot.Robot):
     def __init__(self):

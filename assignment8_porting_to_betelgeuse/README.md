@@ -37,7 +37,7 @@ We thought of that in the api design.
 Instead of importing from robots.alice you will have to import from robots.betelgeuse.
 
 ```python
-from robots.betelgeuse import Robot, BETELGEUSE_MAX_SPEED
+from robots.betelgeuse import Robot, MAX_SPEED
 ```
 
 The turning and speed api is unchanged.
@@ -48,8 +48,8 @@ At betelgeuse steering and turning are fully independent.
 
 
 ```python
-robot.set_speed(BETELGEUSE_MAX_SPEED)  # move with full speed
-robot.set_turn(0.5)  # turn left with 50%
+robot.set_speed(MAX_SPEED)  # move with full speed
+robot.set_turn(1.0)  # turn left with 50% (new max is 2.0)
 ```
 
 And what changes with the distance readings (former ultrasonics - now lidar)?
