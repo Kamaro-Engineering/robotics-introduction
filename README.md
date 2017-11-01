@@ -7,7 +7,7 @@ The provided software can be used with for example an RC-Car with a PI attached 
 If you do not have a robot yet look at the alice- or bob-hardware repositories to build your own robot.
 * [Alice-Bot](https://github.com/penguinmenac3/alice-hardware) (scratch build, indoor, differential drive)
 * [Bob-Bot [WIP]](https://github.com/penguinmenac3/bob-hardware) (modified rc car, outdoor, ackerman steering)
-* Eve-Bot (like alice just smaller, hopefully released opensource someday)
+* [Eve-Bot](https://github.com/firesurfer/MiniRobot) (like alice just smaller)
 
 
 If you want to adopt your ros robot to be compliant with this tutorial, look at [our implementation of the betelgeuse robot (ros)](https://github.com/penguinmenac3/robotics-introduction/blob/master/robots/betelgeuse.py). If you do not understand it, write us an email. 
