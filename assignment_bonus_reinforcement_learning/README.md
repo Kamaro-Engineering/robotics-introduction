@@ -83,6 +83,10 @@ Spoiler alert: You will probably **not** need a really deep neural network.
 
 Simple sample implementation of a dqn agent: [dqn.py](https://github.com/keon/deep-q-learning/blob/master/dqn.py)
 
+Your robot should be able to move like shown below after **~10 hours training** on an **old laptop**.
+
+![Robot exploring the map](Exploration.png)
+
 ### Bonus Knowledge
 
 The alice robot (on which this whole introduction is based) was invented as a cheap, robust, easy to repair platform for reinforcement learning.
