@@ -24,6 +24,8 @@ robot.shutdown()
 
 ```
 
+![Image of robot driving in a rectangle in simulator](Rectangle.png)
+
 ## Bonus
 
 Make the shape of the rectangle configurable by introducing two variables WIDTH = 0.2 and HEIGHT = 0.3.
